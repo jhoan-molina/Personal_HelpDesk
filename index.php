@@ -42,7 +42,7 @@ Se habre este documento con esta sentencia para establecer la conexion con la ba
                 <form class="sign-box" action="" method="post" id="login_form">
                     <input type="hidden" id="rol_id" name="rol_id" value="1">
                     <div class="sign-avatar">
-                        <img src="public/img/avatar-sign.png" alt="">
+                        <img src="public/user.png" alt="" id="imgtipo">
                     </div>
                     <header class="sign-title" id="lbltitulo">Acceso Usuario</header>
                     <!--Se agrega el codigo php para las alertas-->

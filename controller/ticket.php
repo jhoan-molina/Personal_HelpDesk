@@ -83,7 +83,7 @@
                                         <div class="activity-line-item-user-photo">
                                             <a href="#">
                                                 <!--Ubica la foto en el espacio de cada cuadro de dialogo-->
-                                                <img src="../../public/img/photo-64-2.jpg" alt="">
+                                                <img src="../../public/<?php echo $row['rol_id'] ?>.jpg" alt="">
                                             </a>
                                         </div>
                                         <!--Asigna el nombre del usuario cual es traido de la BD-->
