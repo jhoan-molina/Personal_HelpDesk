@@ -157,6 +157,35 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
+        public function get_ticket_total(){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            /*Trae de la tabla toda la informacion*/
+            $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket";
+            $sql = $conectar->prepare($sql);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+    
+        public function get_ticket_totalabierto(){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            /*Trae de la tabla toda la informacion*/
+            $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket WHERE tick_estado='Abierto'";
+            $sql = $conectar->prepare($sql);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+    
+        public function get_ticket_totalcerrado(){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            /*Trae de la tabla toda la informacion*/
+            $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket WHERE tick_estado='Cerrado'";
+            $sql = $conectar->prepare($sql);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
         
     } 
 

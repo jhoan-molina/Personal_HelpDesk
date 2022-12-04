@@ -35,15 +35,17 @@ if (isset($_SESSION["usu_id"])) {
             </div>
             <!--Aplicando la clase para traer una especie de seccion en la cual trae el formato de la tabla-->
             <div class="box-typical box-typical-padding">
+                <button type="button" id="btnNuevo" class="btn btn-inline btn-primary">Nuevo Registro</button>
                 <!--Aplica las clases para traer los datos desde la base de datos y dar el formato-->
-                <table id="ticket_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                <table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
                     <thead>
                         <tr>
-                            <th style="width: 5%;">Nro. Ticket</th>
-                            <th style="width: 15%;">Categoría</th>
-                            <th class="d-none d-sm-table-cell" style="width: 40%;">Titulo</th>
-                            <th class="d-none d-sm-table-cell" style="width: 5%;">Estado</th>
-                            <th class="d-none d-sm-table-cell" style="width: 10%;">Fecha Creación</th>
+                            <th style="width: 10%;">Nombre</th>
+                            <th style="width: 10%;">Apellido</th>
+                            <th class="d-none d-sm-table-cell" style="width: 40%;">Correo</th>
+                            <th class="d-none d-sm-table-cell" style="width: 5%;">Contraseña</th>
+                            <th class="d-none d-sm-table-cell" style="width: 5%;">Rol</th>
+                            <th class="text-center" style="width: 5%;"></th>
                             <th class="text-center" style="width: 5%;"></th>
                         </tr>
                     </thead>
@@ -55,6 +57,7 @@ if (isset($_SESSION["usu_id"])) {
             <!--.container-fluid-->
         </div>
         <!--.page-content-->
+        <?php require_once("modalMantenimiento.php"); ?>
         <?php require_once("../Mainjs/js.php"); ?>
         <script type="text/Javascript" src="mntusuario.js"></script>
 
