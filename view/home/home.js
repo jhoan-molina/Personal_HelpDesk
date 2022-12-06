@@ -25,7 +25,8 @@ $(document).ready(function(){
                 data: data,
                 xkey: 'nom',
                 ykeys: ['total'],
-                labels: ['Value']
+                labels: ['Value'],
+                barColors: ["#5761D7"]
             });
         });
     }else{
@@ -49,7 +50,8 @@ $(document).ready(function(){
                 data: data,
                 xkey: 'nom',
                 ykeys: ['total'],
-                labels: ['Value']
+                labels: ['Value'],
+                barColors: ["#5761D7"]
             });
         });
     }

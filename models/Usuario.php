@@ -19,7 +19,7 @@ class Usuario extends Conectar
                 header("Location: " . Conectar::ruta() . "index.php?m=2");
                 exit();
             } else {
-                $sql = "SELECT * FROM tm_usuario WHERE usu_correo=? AND usu_pass=? AND rol_id=? AND est=1";
+                $sql = "SELECT * FROM tm_usuario WHERE usu_correo=? AND usu_pass=MD5(?) AND rol_id=? AND est=1";
                 //establece la conexion, asigna para cada posicion la variable (correo, pass),
                 //luego ejecuta la variable
                 $stmt = $conectar->prepare($sql);
@@ -52,7 +52,7 @@ class Usuario extends Conectar
         parent::set_names();
         /*Inserta la informacion a la tabla*/
         $sql = "INSERT INTO tm_usuario (usu_id, usu_nom, usu_ape, usu_correo, usu_pass, rol_id, fecha_crea, fecha_modi, fecha_elim, est) 
-        VALUES (NULL, ?, ?, ?, ?, ?, now(), NULL, NULL, '1')";
+        VALUES (NULL, ?, ?, ?, MD5(?), ?, now(), NULL, NULL, '1')";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $usu_nom);
         $sql->bindValue(2, $usu_ape);
@@ -71,7 +71,7 @@ class Usuario extends Conectar
         usu_nom=?,
         usu_ape=?,
         usu_correo=?,
-        usu_pass=?,
+        usu_pass=MD5(?),
         rol_id=?
         WHERE
         usu_id=?
